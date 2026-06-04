@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏠 Ruang Menunggu | Siapa Mata-Mata?</title>
+
+    <!-- 🎁 Fail Gaya -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/lobby.css">
+</head>
+<body>
+
+    <!-- 🌌 Latar Belakang -->
+    <div class="latar-belakang"></div>
+
+    <!-- 📦 Bekas Utama Lobby -->
+    <div class="bekas-lobi">
+        
+        <!-- 📢 MAKLUMAT BILIK -->
+        <div class="kepala-lobi">
+            <h1>🏠 RUANG MENUNGGU PERMAINAN</h1>
+            <p>Kongsikan kod ini kepada kawan-kawan anda:</p>
+            <div class="kotak-kod">
+                <span id="paparanKodBilik">ABC123</span>
+                <button class="butang-salin" onclick="salinKodBilik()">
+                    <i class="fas fa-copy"></i> Salin
+                </button>
+            </div>
+        </div>
+
+        <!-- 👥 SENARAI PEMAIN -->
+        <div class="bahagian-pemain">
+            <h3>Senarai Pemain (<span id="jumlahPemain">0</span>/6)</h3>
+            <div id="senaraiNamaPemain" class="grid-pemain">
+                <!-- Nama pemain akan dipaparkan di sini secara automatik -->
+                <div class="kotak-pemain kosong">Menunggu pemain...</div>
+                <div class="kotak-pemain kosong">Menunggu pemain...</div>
+                <div class="kotak-pemain kosong">Menunggu pemain...</div>
+                <div class="kotak-pemain kosong">Menunggu pemain...</div>
+                <div class="kotak-pemain kosong">Menunggu pemain...</div>
+                <div class="kotak-pemain kosong">Menunggu pemain...</div>
+            </div>
+        </div>
+
+        <!-- ⚠️ MAKLUMAN -->
+        <div id="amalanCukup" class="teks-amaran">
+            * Perlu sekurang-kurangnya 4 pemain untuk memulakan permainan.
+        </div>
+
+        <!-- 🎮 BUTANG KAWALAN -->
+        <div class="kawalan-tindakan">
+            <button id="butangMulaPermainan" class="butang-besar hijau" onclick="mulakanPermainan()" disabled>
+                🎉 MULAKAN PERMAINAN
+            </button>
+            <button id="butangKeluarBilik" class="butang-kecil merah" onclick="keluarBilik()">
+                ❌ KELUAR BILIK
+            </button>
+        </div>
+
+    </div>
+
+    <!-- ⚙️ Fail JavaScript -->
+    <!-- Susunan ikut keperluan -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/utils/storage.js"></script>
+    <script src="js/room/leaveRoom.js"></script>
+    <script src="js/room/roomListener.js"></script>
+    <script src="js/game/startGame.js"></script>
+    <script src="js/pages/lobby.js"></script>
+
+</body>
+</html>

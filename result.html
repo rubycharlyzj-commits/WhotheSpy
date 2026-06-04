@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏆 Keputusan Akhir | Siapa Mata-Mata?</title>
+
+    <!-- 🎁 Pautan Fail Gaya -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/result.css">
+</head>
+<body>
+
+    <!-- 🌌 Latar Belakang -->
+    <div class="latar-belakang"></div>
+
+    <!-- 📦 BEKAS UTAMA KEPUTUSAN -->
+    <div class="bekas-keputusan">
+
+        <!-- 📢 TAJUK KEPUTUSAN -->
+        <div class="kepala-keputusan">
+            <h1 id="tajukKeputusan">🏆 KEPUTUSAN PERMAINAN 🏆</h1>
+        </div>
+
+        <!-- 🖼️ GAMBAR & PENGUMUMAN UTAMA -->
+        <div id="kotakKeputusan" class="kotak-keputusan">
+            <img id="gambarKeputusan" src="assets/images/logo.png" alt="Keputusan" class="gambar-penghujung">
+            
+            <!-- Teks besar yang akan berubah ikut keputusan -->
+            <h2 id="pengumumanTeks">🎉 SEMUA ORANG MENANG! 🎉</h2>
+            <p id="keteranganKeputusan" class="teks-keputusan">
+                Syabas! Kami berjaya menangkap Mata-Mata tersebut.
+            </p>
+        </div>
+
+        <!-- 📋 MAKLUMAT TERPERINCI -->
+        <div class="bahagian-maklumat">
+            <h3>📋 Butiran Permainan:</h3>
+            
+            <div class="senarai-maklumat">
+                <p>🕵️ Mata-Mata Sebenar: 
+                    <strong id="namaSpyAkhir">Pemain 2 (Ahmad)</strong>
+                </p>
+                <p>❌ Yang Dibuang Oleh Undian: 
+                    <strong id="yangDibuangAkhir">Pemain 2 (Ahmad)</strong>
+                </p>
+                <p>🔤 Perkataan Biasa: 
+                    <strong id="perkataanBiasaAkhir">Nasi Lemak</strong>
+                </p>
+                <p>🅰️ Perkataan Mata-Mata: 
+                    <strong id="perkataanSpyAkhir">Nasi Ayam</strong>
+                </p>
+            </div>
+        </div>
+
+        <!-- 🎮 BUTANG TINDAKAN -->
+        <div class="kawalan-tindakan">
+            <button class="butang hijau besar" onclick="permainanBaru()">
+                🔄 PERMAINAN BARU
+            </button>
+            <button class="butang merah kecil" onclick="keluarPermainan()">
+                🚪 KELUAR PERMAINAN
+            </button>
+        </div>
+
+    </div>
+
+    <!-- ⚙️ Fail JavaScript (Susunan Betul) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="js/firebase.js"></script>
+    
+    <!-- Utiliti -->
+    <script src="js/utils/storage.js"></script>
+    
+    <!-- Logik Keputusan -->
+    <script src="js/game/revealSpy.js"></script>
+    <script src="js/game/winner.js"></script>
+    
+    <!-- Halaman -->
+    <script src="js/pages/result.js"></script>
+
+</body>
+</html>

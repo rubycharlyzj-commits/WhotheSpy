@@ -1,0 +1,45 @@
+import { db } from "../firebase.js";
+import {
+  collection,
+  getDocs,
+  doc,
+  getDoc
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+export async function getWinner(roomCode) {
+
+  const votes = {};
+
+  const snap = await getDocs(
+    collection(db, "rooms", roomCode, "votes")
+  );
+
+  snap.forEach((v) => {
+    const target = v.data().targetId;
+
+    votes[target] =
+      (votes[target] || 0) + 1;
+  });
+
+  let eliminated = null;
+  let max = 0;
+
+  for (const id in votes) {
+    if (votes[id] > max) {
+      max = votes[id];
+      eliminated = id;
+    }
+  }
+
+  const room = await getDoc(
+    doc(db, "rooms", roomCode)
+  );
+
+  const spyId = room.data().spyId;
+
+  return {
+    eliminated,
+    spyId,
+    playersWin: eliminated === spyId
+  };
+}

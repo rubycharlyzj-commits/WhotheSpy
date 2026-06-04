@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Sedang Bermain | Siapa Mata-Mata?</title>
+
+    <!-- 🎁 Pautan Fail Gaya -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+
+    <!-- 🌌 Latar Belakang -->
+    <div class="latar-belakang"></div>
+
+    <!-- 📦 BEKAS UTAMA PERMAINAN -->
+    <div class="bekas-permainan">
+
+        <!-- 📢 MAKLUMAT ATAS (FAZA SEMASA) -->
+        <div class="kepala-permainan">
+            <h2 id="tajukFasa">📝 Fasa 1: Lihat Perkataan</h2>
+            <p id="arahanUtama">Hafal perkataan ini, jangan tunjuk kawan sebelah!</p>
+        </div>
+
+        <!-- ==============================================
+             🟢 FASA 1: PAPAR PERKATAAN & PERANAN
+             ============================================== -->
+        <div id="fasaPerkataan" class="bahagian-fasa aktif">
+            <div id="kotakPeranan" class="kotak-maklumat">
+                <!-- Teks ini akan ditukar secara automatik: "ANDA SELAMAT" atau "ANDA SPY" -->
+                <h3 id="jenisPeranan">✅ ANDA SELAMAT</h3>
+            </div>
+
+            <!-- 🃏 KAD BESAR TEMPAT PERKATAAN -->
+            <div id="kadPerkataan" class="kad-besar biasa">
+                <p id="teksPerkataan">NASI LEMAK</p>
+            </div>
+
+            <p class="nota-kecil">* Ingat baik-baik, lepas ini skrin akan bertukar.</p>
+
+            <!-- 👆 BUTANG TINDAKAN -->
+            <div class="kawalan-butang">
+                <button class="butang hijau besar" onclick="tukarFasa(2)">
+                    ✅ SAYA SUDAH SEDIA
+                </button>
+            </div>
+        </div>
+
+        <!-- ==============================================
+             🟡 FASA 2: GILIRAN MENJELASKAN
+             ============================================== -->
+        <div id="fasaTerangkan" class="bahagian-fasa">
+            <div class="kotak-maklumat maklumat-giliran">
+                <h3>🗣️ Giliran Pemain <span id="nomborGiliran">1</span> Sekarang!</h3>
+            </div>
+
+            <div class="kotak-arahan">
+                <p>Terangkan ciri-ciri benda ini <strong>TANPA menyebut nama dia terus!</strong></p>
+                <p class="contoh">Contoh: "Ini makanan", "Biasanya dimakan waktu pagi", "Ada santan"</p>
+            </div>
+
+            <!-- 👆 BUTANG TINDAKAN -->
+            <div class="kawalan-butang">
+                <button class="butang biru" onclick="giliranSeterusnya()">
+                    ➡️ SELESAI, PEMAIN SETERUSNYA
+                </button>
+                <button class="butang kuning" onclick="tukarFasa(3)">
+                    ⏭️ HABIS SEMUA, NAK UNDI
+                </button>
+            </div>
+        </div>
+
+        <!-- ==============================================
+             🔴 FASA 3: SISTEM UNDIAN
+             ============================================== -->
+        <div id="fasaUndian" class="bahagian-fasa">
+            <div class="kotak-maklumat amaran-undian">
+                <h3>🗳️ UNDI SIAPA YANG ANDA SYAKI MENJADI MATA-MATA?</h3>
+                <p>Pilih nama pemain yang anda rasa paling mencurigakan.</p>
+            </div>
+
+            <!-- 🎛️ SENARAI BUTANG UNDIAN -->
+            <div id="senaraiButangUndian" class="grid-undian">
+                <!-- Butang akan dijana secara automatik di sini mengikut jumlah pemain -->
+                <button class="butang-undian" onclick="undiPemain(1)">Pemain 1</button>
+                <button class="butang-undian" onclick="undiPemain(2)">Pemain 2</button>
+                <button class="butang-undian" onclick="undiPemain(3)">Pemain 3</button>
+                <button class="butang-undian" onclick="undiPemain(4)">Pemain 4</button>
+                <button class="butang-undian" onclick="undiPemain(5)">Pemain 5</button>
+                <button class="butang-undian" onclick="undiPemain(6)">Pemain 6</button>
+            </div>
+
+            <p id="statusUndian" class="teks-keputusan-undian"></p>
+        </div>
+
+    </div>
+
+    <!-- ⚙️ Fail JavaScript (Susunan Betul) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="js/firebase.js"></script>
+    
+    <!-- Utiliti & Data -->
+    <script src="js/utils/storage.js"></script>
+    <script src="js/data/words.js"></script>
+    <script src="js/data/settings.js"></script>
+    
+    <!-- Logik Permainan -->
+    <script src="js/game/assignRoles.js"></script>
+    <script src="js/game/assignWord.js"></script>
+    <script src="js/game/voting.js"></script>
+    
+    <!-- Halaman Utama -->
+    <script src="js/pages/game.js"></script>
+
+</body>
+</html>

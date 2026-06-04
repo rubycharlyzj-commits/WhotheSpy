@@ -1,0 +1,341 @@
+.lobby-container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.room-header-card {
+    background-color: #161a22;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.room-title-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.room-title-info h2 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #a4b0be;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.room-code-display {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ff4757;
+    letter-spacing: 2px;
+}
+
+.btn-copy {
+    background-color: #1f242e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #a4b0be;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn-copy:hover {
+    background-color: #242b37;
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.btn-copy:active {
+    transform: scale(0.95);
+}
+
+.panel-box {
+    background-color: #161a22;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 10px;
+}
+
+.panel-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.panel-title i {
+    color: #ff4757;
+}
+
+.player-count {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #a4b0be;
+    background-color: #1f242e;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.player-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.player-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.player-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.player-list::-webkit-scrollbar-thumb {
+    background: #1f242e;
+    border-radius: 3px;
+}
+
+.player-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: #1f242e;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.player-card.is-me {
+    border-color: rgba(255, 71, 87, 0.3);
+    background-color: rgba(255, 71, 87, 0.02);
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.player-avatar {
+    width: 32px;
+    height: 32px;
+    background-color: #242b37;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #a4b0be;
+    font-size: 0.9rem;
+}
+
+.player-card.is-me .player-avatar {
+    background-color: rgba(255, 71, 87, 0.1);
+    color: #ff4757;
+}
+
+.player-name-text {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.badge-container {
+    display: flex;
+    gap: 6px;
+}
+
+.badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.badge-host {
+    background-color: rgba(255, 165, 2, 0.1);
+    color: #ffa502;
+    border: 1px solid rgba(255, 165, 2, 0.2);
+}
+
+.badge-me {
+    background-color: rgba(255, 71, 87, 0.1);
+    color: #ff4757;
+    border: 1px solid rgba(255, 71, 87, 0.2);
+}
+
+.settings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.setting-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.setting-label {
+    font-size: 0.9rem;
+    color: #a4b0be;
+    font-weight: 500;
+}
+
+.setting-control {
+    width: 150px;
+}
+
+.setting-select {
+    width: 100%;
+    padding: 8px 12px;
+    background-color: #1f242e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.setting-select:focus {
+    border-color: #ff4757;
+}
+
+.setting-select:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.lobby-actions-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.btn-start-game {
+    background-color: #ff4757;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
+}
+
+.btn-start-game:hover {
+    background-color: #ff6b81;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 71, 87, 0.4);
+}
+
+.btn-start-game:active {
+    transform: translateY(0);
+}
+
+.btn-start-game:disabled {
+    background-color: #2f3542;
+    color: #747d8c;
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-leave-room {
+    background-color: #1f242e;
+    color: #ff4757;
+    border: 1px solid rgba(255, 71, 87, 0.2);
+}
+
+.btn-leave-room:hover {
+    background-color: rgba(255, 71, 87, 0.05);
+    transform: translateY(-2px);
+}
+
+.btn-leave-room:active {
+    transform: translateY(0);
+}
+
+.waiting-message {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #747d8c;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+}
+
+.waiting-message i {
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 480px) {
+    .lobby-container {
+        gap: 16px;
+    }
+    
+    .panel-box {
+        padding: 16px;
+    }
+    
+    .room-header-card {
+        padding: 16px;
+    }
+    
+    .room-code-display {
+        font-size: 1.4rem;
+    }
+}

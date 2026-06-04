@@ -1,0 +1,24 @@
+import { db } from "../firebase.js";
+import {
+  doc,
+  setDoc
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+export async function vote(
+  roomCode,
+  voterId,
+  targetId
+) {
+  await setDoc(
+    doc(
+      db,
+      "rooms",
+      roomCode,
+      "votes",
+      voterId
+    ),
+    {
+      targetId
+    }
+  );
+}

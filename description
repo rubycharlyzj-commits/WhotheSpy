@@ -1,0 +1,25 @@
+import { db } from "../firebase.js";
+import {
+  doc,
+  setDoc
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+export async function submitDescription(
+  roomCode,
+  playerId,
+  text
+) {
+  await setDoc(
+    doc(
+      db,
+      "rooms",
+      roomCode,
+      "descriptions",
+      playerId
+    ),
+    {
+      text,
+      createdAt: Date.now()
+    }
+  );
+}

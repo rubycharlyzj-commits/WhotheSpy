@@ -1,0 +1,23 @@
+import { db } from "../firebase.js";
+import {
+  collection,
+  onSnapshot
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+export function listenPlayers(roomCode, callback) {
+  onSnapshot(
+    collection(db, "rooms", roomCode, "players"),
+    (snapshot) => {
+      const players = [];
+
+      snapshot.forEach((doc) => {
+        players.push({
+          id: doc.id,
+          ...doc.data()
+        });
+      });
+
+      callback(players);
+    }
+  );
+}

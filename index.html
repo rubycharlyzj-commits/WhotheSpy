@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🕵️ Siapa Mata-Mata? | Halaman Utama</title>
+    
+    <!-- 🎨 Pautan ke Fail Gaya -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- 🖼️ Ikon untuk web -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- 🌌 Latar Belakang -->
+    <div class="latar-belakang"></div>
+
+    <!-- 📦 Bekas Utama -->
+    <div class="bekas-selamat">
+        
+        <!-- 👤 Kepala / Tajuk -->
+        <div class="kepala">
+            <img src="assets/images/logo.png" alt="Logo Permainan" class="logo">
+            <h1>🕵️ SIAPA MATA-MATA? 🕵️</h1>
+            <p class="slogan">Adakah anda orang biasa atau penyamar?</p>
+        </div>
+
+        <!-- 📝 Borang Masuk -->
+        <div class="kotak-borang">
+            
+            <!-- 📛 Kotak Isi Nama -->
+            <div class="kumpul-masuk">
+                <i class="fas fa-user"></i>
+                <input 
+                    type="text" 
+                    id="namaPemain" 
+                    placeholder="Masukkan nama panggilan anda..." 
+                    required
+                    autocomplete="off"
+                >
+            </div>
+
+            <!-- 🔢 Kotak Isi Kod Bilik -->
+            <div class="kumpul-masuk">
+                <i class="fas fa-key"></i>
+                <input 
+                    type="text" 
+                    id="kodBilik" 
+                    placeholder="Masukkan kod bilik (Contoh: ABC123)" 
+                    maxlength="6"
+                    autocomplete="off"
+                >
+            </div>
+
+            <!-- 🎮 BUTANG TINDAKAN -->
+            <div class="kawalan-butang">
+                <button id="ciptaBilikBaru" class="butang biru" onclick="ciptaBilikBaru()">
+                    <i class="fas fa-plus-circle"></i> CIPTA BILIK BARU
+                </button>
+
+                <button id="masukBilik" class="butang hijau" onclick="masukBilikSediaAda()">
+                    <i class="fas fa-sign-in-alt"></i> MASUK BILIK
+                </button>
+            </div>
+
+            <!-- ℹ️ Keterangan Tambahan -->
+            <p class="teks-panduan">
+                * Tekan <b>Cipta Bilik</b> untuk dapat kod baru,<br>
+                * Atau masukkan kod yang diberikan kawan anda.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ⚙️ PAUTAN KE FAIL JAVASCRIPT -->
+    <!-- Susunan penting: Firebase dulu, baru fail lain -->
+    <script src="js/firebase.js"></script>
+    <script src="js/utils/storage.js"></script>
+    <script src="js/utils/validator.js"></script>
+    <script src="js/room/roomCode.js"></script>
+    <script src="js/room/createRoom.js"></script>
+    <script src="js/room/joinRoom.js"></script>
+    <script src="js/pages/join.js"></script>
+
+</body>
+</html>
